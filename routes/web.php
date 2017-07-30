@@ -56,3 +56,7 @@ Route::get('/tree2','TreeController@show_tree2');
 
 Route::get('/showchild','ChildController@show');
 
+//Facebook Socialite
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('login.facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
