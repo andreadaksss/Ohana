@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Spouse;
+use Auth;
 use Session;
 use Redirect;
 
@@ -33,7 +34,7 @@ class SpouseController extends Controller
         $spouses->sGender=$request->sGender;
         $spouses->save();
 
-        Session::flash('success_msg', 'Successfully Added Your SPouse!');
+        Session::flash('success_msg', 'Successfully Added Your Spouse!');
         return Redirect::back();
     }
 
@@ -46,7 +47,8 @@ class SpouseController extends Controller
 
     public function edit($id)
     {
-        //
+        $spouses = Spouse::find($id);
+        return view('',['spouse'=> $spouses]);
     }
 
  

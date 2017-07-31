@@ -12,19 +12,19 @@
 
         <div class="form-group">
            <input type="hidden" name="_token" value="{{csrf_token()}}"><br>
-          <input type="text" class="form-control" name="mFirstname" id="mFirstname" placeholder="First Name" value="{{$mother->mFirstname}}">
+          <input type="text" class="form-control" name="mFirstname" id="mFirstname" placeholder="First Name">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="mMiddlename" id="mMiddlename" placeholder="Middle Name" value="{{$mother->mMiddlename}}">
+          <input type="text" class="form-control" name="mMiddlename" id="mMiddlename" placeholder="Middle Name">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="mLastname" id="mLastname" placeholder="Last Name" value="{{$mother->mLastname}}">
+          <input type="text" class="form-control" name="mLastname" id="mLastname" placeholder="Last Name">
         </div>
 
         <div class="form-group">
-          <input type="date" class="form-control" name="mBirthday" id="mBirthday" placeholder="Birth Date" value="{{$mother->mBirthday}}">
+          <input type="date" class="form-control" name="mBirthday" id="mBirthday" placeholder="Birth Date">
         </div>
 
         <div class="radio-inline">

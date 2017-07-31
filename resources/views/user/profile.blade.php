@@ -20,7 +20,7 @@
                         </div>
                     @endif
                 </center>
-                     <form action ="update_user"  class="collapse" id="collapse_user" method="POST">
+                     <form action ="update/{{ Auth::user()->id }}"  class="collapse" id="collapse_user" method="POST">
 
                         <div id="data_user">
                             <div class="form-group">
