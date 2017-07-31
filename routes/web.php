@@ -53,7 +53,7 @@ Route::post('action_child','ChildController@store');
 // Route::post('update_user/{id}','UserController@update');
 
 Route::get('edit/{id}','UserController@edit');
-Route::post('edit/update/{id}','UserController@update');
+Route::post('user/update/{id}','UserController@update');
 
 Route::get('/view','TreeController@show');
 

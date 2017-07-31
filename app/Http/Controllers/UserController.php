@@ -50,6 +50,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        // $users = Auth::find($id);
         $users = Auth::user()->id;
         $users->uFirstname=$request->uFirstname;
         $users->uMiddlename=$request->uMiddlename;
@@ -60,7 +61,7 @@ class UserController extends Controller
         $users->uGender=$request->uGender;
         $users->save();
        // return redirect('profile.index');
-       return view('user.profile',['user'=> $users]);
+    //    return view('user.profile',['user'=> $users]);
 
         // Session::flash('success_msg', 'Successfully Edited Your Profile!');
         // return Redirect::back();
