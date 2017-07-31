@@ -25,16 +25,27 @@ class TreeController extends Controller
     public function store(Request $request)
     {
         $trees = new Tree;
+
         $currentUserId=Auth::user()->id;
         $trees->tUid=$currentUserId;
+        
         $trees->save();
-
     }
-
     
     public function show($id)
     {
-        $trees =Tree::all();
+        // $trees =Tree::all();
+        $tree = DB::table('trees')
+                ->leftJoin('users',     'trees.tUid',   '=', 'users.id')
+                ->leftJoin('spouses',   'users.id',     '=', 'spouses.sUid')
+                ->leftJoin('children',  'users.id',     '=', 'children.cUid')
+                ->leftJoin('mothers',   'users.id',     '=', 'mothers.mUid')
+                ->leftJoin('fathers',   'users.id',     '=', 'fathers.fUid')
+                ->select('users.*', 'spouses.*', 'children.*', 'mothers.*', 'fathers.*')
+                ->where('users.id', $id)
+                ->get();
+
+        return view('genogram.sample1mine', array('tree' => $tree));
     }
 
     public function edit($id)
@@ -42,7 +53,6 @@ class TreeController extends Controller
         //
     }
 
- 
     public function update(Request $request, $id)
     {
         // 

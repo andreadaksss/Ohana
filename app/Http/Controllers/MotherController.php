@@ -9,7 +9,7 @@ use Redirect;
 
 class MotherController extends Controller
 {
-     public function index()
+    public function index()
     {
         //
     }
@@ -22,7 +22,9 @@ class MotherController extends Controller
     public function store(Request $request)
     {
         $mothers = new Mother;
+
         $currentUserId=Auth::user()->id;
+
         $mothers->mUid=$currentUserId;
         $mothers->mFirstname=$request->mFirstname;
         $mothers->mMiddlename=$request->mMiddlename;
@@ -31,13 +33,13 @@ class MotherController extends Controller
         $mothers->mMaritalStatus=$request->mMaritalStatus;
         $mothers->mLivingStatus=$request->mLivingStatus;
         $mothers->mGender=$request->mGender;
+
         $mothers->save();
 
         Session::flash('success_msg', 'Successfully Added Your Mother!');
         return Redirect::back();
     }
 
-    
     public function show($id)
     {
         $mothers =Mother::all();
@@ -49,10 +51,10 @@ class MotherController extends Controller
         //
     }
 
- 
     public function update(Request $request, $id)
     {
         $mothers = Mother::find($id);
+
         $mothers->mFirstname=$request->mFirstname;
         $mothers->mMiddlename=$request->mMiddlename;
         $mothers->mLastname=$request->mLastname;
@@ -60,6 +62,7 @@ class MotherController extends Controller
         $mothers->mMaritalStatus=$request->mMaritalStatus;
         $mothers->mLivingStatus=$request->mLivingStatus;
         $mothers->mGender=$request->mGender;
+        
         $mothers->save();
     }
 

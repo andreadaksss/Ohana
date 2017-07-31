@@ -13,9 +13,8 @@ class CreateTreesTable extends Migration
      */
     public function up()
     {
-         Schema::create('trees', function (Blueprint $table) 
+        Schema::create('trees', function (Blueprint $table) 
         {
-            
             $table->increments('id');
             $table->integer('tUid')->unsigned()->nullable();
             $table->rememberToken();

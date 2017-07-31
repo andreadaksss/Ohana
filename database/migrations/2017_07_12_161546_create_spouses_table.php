@@ -13,14 +13,14 @@ class CreateSpousesTable extends Migration
      */
     public function up()
     {
-        Schema::create('spouses', function (Blueprint $table) {
-           
+        Schema::create('spouses', function (Blueprint $table)
+        {           
             $table->increments('id');
             $table->string('sFirstname');
             $table->string('sMiddlename');
             $table->string('sLastname');
-            $table->string('sGender');
             $table->date('sBirthday');
+            $table->string('sGender');
             $table->string('sLivingStatus');
             $table->string('sMaritalStatus');
             $table->integer('sUid')->unsigned()->nullable();

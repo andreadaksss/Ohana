@@ -13,13 +13,14 @@ class CreateFathersTable extends Migration
      */
     public function up()
     {
-        Schema::create('fathers', function (Blueprint $table) {
+        Schema::create('fathers', function (Blueprint $table)
+        {
             $table->increments('id');
             $table->string('fFirstname');
             $table->string('fMiddlename');
             $table->string('fLastname');
-            $table->string('fGender');
             $table->date('fBirthday');
+            $table->string('fGender');
             $table->string('fLivingStatus');
             $table->string('fMaritalStatus');
             $table->integer('fUid')->unsigned()->nullable();
