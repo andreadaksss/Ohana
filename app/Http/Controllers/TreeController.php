@@ -62,6 +62,7 @@ class TreeController extends Controller
                 });
 
         return view('genogram.sample1mine', array('tree' => $tree, 'tree2' => $tree2));
+    }
 
     public function showEloquent()
     {
