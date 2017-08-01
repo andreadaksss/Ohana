@@ -23,7 +23,9 @@ class SpouseController extends Controller
     public function store(Request $request)
     {
         $spouses = new Spouse;
+
         $currentUserId=Auth::user()->id;
+
         $spouses->sUid=$currentUserId;
         $spouses->sFirstname=$request->sFirstname;
         $spouses->sMiddlename=$request->sMiddlename;
@@ -32,13 +34,13 @@ class SpouseController extends Controller
         $spouses->sMaritalStatus=$request->sMaritalStatus;
         $spouses->sLivingStatus=$request->sLivingStatus;
         $spouses->sGender=$request->sGender;
+
         $spouses->save();
 
         Session::flash('success_msg', 'Successfully Added Your Spouse!');
         return Redirect::back();
     }
 
-    
     public function show($id)
     {
         $spouses =Spouse::all();
@@ -51,7 +53,6 @@ class SpouseController extends Controller
         return view('spouse.edit',['spouse'=> $spouses]);
     }
 
- 
     public function update(Request $request, $id)
     {
         $spouses = Spouse::find($id);

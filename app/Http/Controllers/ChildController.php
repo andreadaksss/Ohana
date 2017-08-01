@@ -11,7 +11,6 @@ use View;
 
 class ChildController extends Controller
 {
-   
     public function index()
     {
         //

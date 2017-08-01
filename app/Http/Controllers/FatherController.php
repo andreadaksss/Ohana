@@ -24,7 +24,9 @@ class FatherController extends Controller
     public function store(Request $request)
     {
         $fathers = new Father;
+
         $currentUserId=Auth::user()->id;
+
         $fathers->fUid=$currentUserId;
         $fathers->fFirstname=$request->fFirstname;
         $fathers->fMiddlename=$request->fMiddlename;
@@ -33,13 +35,13 @@ class FatherController extends Controller
         $fathers->fMaritalStatus=$request->fMaritalStatus;
         $fathers->fLivingStatus=$request->fLivingStatus;
         $fathers->fGender=$request->fGender;
+
         $fathers->save();
 
         Session::flash('success_msg', 'Successfully Added Your Father!');
         return Redirect::back();
     }
 
-    
     public function show($id)
     {
         $fathers=Father::all();
@@ -56,6 +58,7 @@ class FatherController extends Controller
     public function update(Request $request, $id)
     {
         $fathers = Father::find($id);
+
         $fathers->fFirstname=$request->fFirstname;
         $fathers->fMiddlename=$request->fMiddlename;
         $fathers->fLastname=$request->fLastname;
@@ -63,6 +66,7 @@ class FatherController extends Controller
         $fathers->fMaritalStatus=$request->fMaritalStatus;
         $fathers->fLivingStatus=$request->fLivingStatus;
         $fathers->fGender=$request->fGender;
+        
         $fathers->save();
     }
 
