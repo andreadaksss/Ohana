@@ -7,7 +7,12 @@
                 <div class="panel-heading"><center><h1>PROFILE</h1></center>
                 </div>
                  <div class="panel-body" align="center">
-                <button type="button" class="btn btn-primary btn-block" align="center" data-toggle="collapse" data-target="#collapse_user" style="position= right;">Edit Profile</button>
+
+
+
+                <button type="button" class="btn btn-primary btn-block" align="center" style="position= right;"><a href="uedit/{{ Auth::user()->id }}">Edit Profile</a></button>
+                <!-- <button type="button" class="btn btn-primary btn-block" align="center" data-toggle="collapse" data-target="#collapse_user" style="position= right;"><a href="uedit/{{Auth::user()->id}}">Edit Profile</a></button> -->
+                
                 <br>
                 <center>
                      @if(Session::has('success_msg'))
@@ -20,7 +25,7 @@
                         </div>
                     @endif
                 </center>
-                     <form action ="update/{{ Auth::user()->id }}"  class="collapse" id="collapse_user" method="POST">
+                     <form action ="uedit/{{ Auth::user()->id }}"  class="collapse" id="collapse_user" method="POST">
 
                         <div id="data_user">
                             <div class="form-group">
@@ -82,4 +87,9 @@
         </div>
     </div>
 </div>
+
+
+    
+
+
 @endsection

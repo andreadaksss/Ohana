@@ -2,49 +2,53 @@
 
 
 @section('content')
+ <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center><h1>UPDATE PROFILE</h1></center>
+                </div>
+                 <div class="panel-body" align="center">
 
       <!-- MAMAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA -->
       
-      <form action ="update/{{$mother->id}}"  method="POST">
+      <form action ="/update/{{Auth::user()->id}}"  method="POST">
 
       <div id="data_mother">
-        <h2>Input Your Mother's Information..</h2>
 
         <div class="form-group">
            <input type="hidden" name="_token" value="{{csrf_token()}}"><br>
-          <input type="text" class="form-control" name="mFirstname" id="mFirstname" placeholder="First Name">
+          <input type="text" class="form-control" name="uFirstname" id="uFirstname" placeholder="First Name" value="{{$user->uFirstname}}">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="mMiddlename" id="mMiddlename" placeholder="Middle Name">
+          <input type="text" class="form-control" name="uMiddlename" id="uMiddlename" placeholder="Middle Name" value="{{$user->uFirstname}}">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="mLastname" id="mLastname" placeholder="Last Name">
+          <input type="text" class="form-control" name="uLastname" id="uLastname" placeholder="Last Name" value="{{$user->uFirstname}}">
         </div>
 
         <div class="form-group">
-          <input type="date" class="form-control" name="mBirthday" id="mBirthday" placeholder="Birth Date">
+          <input type="date" class="form-control" name="uBirthday" id="uBirthday" placeholder="Birth Date" value="{{$user->uFirstname}}">
         </div>
 
         <div class="radio-inline">
          <h4>Marital Status:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Single">Single
+          <input type="radio" name="uMaritalStatus" id="uMaritalStatus" value="Single">Single
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Married">Married
+          <input type="radio" name="uMaritalStatus" id="uMaritalStatus" value="Married">Married
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Divorced">Divorced
+          <input type="radio" name="uMaritalStatus" id="uMaritalStatus" value="Divorced">Divorced
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Widowed">Widowed
+          <input type="radio" name="uMaritalStatus" id="uMaritalStatus" value="Widowed">Widowed
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
 
          <div class="radio-inline">
          	 <h4>Living Status:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mLivingStatus" id="mLivingStatus" value="Deceased">Deceased
+          <input type="radio" name="uLivingStatus" id="uLivingStatus" value="Deceased">Deceased
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mLivingStatus" id="mLivingStatus" value="Living">Living
+          <input type="radio" name="uLivingStatus" id="uLivingStatus" value="Living">Living
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
@@ -52,9 +56,9 @@
         
          <div class="radio-inline">
          	<h4>Gender:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mGender" id="mGender" value="Female" checked>Female
+          <input type="radio" name="uGender" id="uGender" value="Female">Female
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mGender" id="mGender" value="Male" disabled>Male
+          <input type="radio" name="uGender" id="uGender" value="Male">Male
         </div>
 
 <br><br>

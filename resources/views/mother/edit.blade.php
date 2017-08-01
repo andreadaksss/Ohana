@@ -2,13 +2,16 @@
 
 
 @section('content')
-
+ <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center><h1>Update Mother Profile</h1></center>
+                </div>
+                 <div class="panel-body" align="center">
       <!-- MOTHER EDIT BLADE -->
       
       <form action ="update/{{$mother->id}}"  method="POST">
 
       <div id="data_mother">
-        <h2>Edit Your Mother's Information..</h2>
 
         <div class="form-group">
            <input type="hidden" name="_token" value="{{csrf_token()}}"><br>

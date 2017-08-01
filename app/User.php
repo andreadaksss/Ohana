@@ -14,9 +14,14 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-    protected $hidden =
-    [
-        'password',
-        'remember_token',
-    ];    
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    public function spouse()
+    {
+        return $this->hasMany(Spouse::class);
+    }
+
+    
 }

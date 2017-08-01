@@ -2,13 +2,15 @@
 
 
 @section('content')
-
-      <!-- SPOUSE EDIT BLADE -->
+ <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><center><h1>Update Spouse Profile</h1></center>
+                </div>
+                 <div class="panel-body" align="center">
       
       <form action ="update/{{$spouse->id}}"  method="POST">
 
       <div id="data_mother">
-        <h2>Edit Your Spouse's Information..</h2>
 
         <div class="form-group">
            <input type="hidden" name="_token" value="{{csrf_token()}}"><br>
@@ -52,9 +54,9 @@
         
          <div class="radio-inline">
          	<h4>Gender:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="sGender" id="sGender" value="Female" checked>Female
+          <input type="radio" name="sGender" id="sGender" value="Female">Female
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="sGender" id="sGender" value="Male" disabled>Male
+          <input type="radio" name="sGender" id="sGender" value="Male">Male
         </div>
 
 <br><br>
