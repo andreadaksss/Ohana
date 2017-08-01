@@ -71,23 +71,15 @@ class LoginController extends Controller
 
         }else{
 
-
-
         $user = new User;
         
-       
-
         $user->email= $userSocial->email;
-
-        // $user->family= $userSocial->family;
 
         $user->save();
 
         Auth::login($user);
 
-      
-
-        }
+          }
 
         
 
