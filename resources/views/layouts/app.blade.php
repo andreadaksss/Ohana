@@ -46,12 +46,11 @@
                      <ul class="nav navbar-nav">
       <li class="home"><a href="/home">Home</a></li>
       
-      <li><a href="/profile/userprofile">Profile</a></li>
+      <li><a href="/user/profile">Profile</a></li>
        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Family Tree <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/familytree">Add Family</a></li>
-          <li><a href="/">View Family Tree</a></li>
-          <li><a href="/showchild">View Family Tree</a></li>
+          <li><a href="/view">View Family Tree</a></li>
         </ul>
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us<span class="caret"></span></a>

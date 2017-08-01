@@ -23,17 +23,17 @@ class ChildController extends Controller
 
     public function store(Request $request)
     {
-        $child = new Child;
+        $children = new Child;
         $currentUserId=Auth::user()->id;
-        $child->cUid=$currentUserId;
-        $child->cFirstname=$request->cFirstname;
-        $child->cMiddlename=$request->cMiddlename;
-        $child->cLastname=$request->cLastname;
-        $child->cBirthday=$request->cBirthday;
-        $child->cMaritalStatus=$request->cMaritalStatus;
-        $child->cLivingStatus=$request->cLivingStatus;
-        $child->cGender=$request->cGender;
-        $child->save();
+        $children->cUid=$currentUserId;
+        $children->cFirstname=$request->cFirstname;
+        $children->cMiddlename=$request->cMiddlename;
+        $children->cLastname=$request->cLastname;
+        $children->cBirthday=$request->cBirthday;
+        $children->cMaritalStatus=$request->cMaritalStatus;
+        $children->cLivingStatus=$request->cLivingStatus;
+        $children->cGender=$request->cGender;
+        $children->save();
 
         Session::flash('success_msg', 'Successfully Added Your Child!');
         return Redirect::back();
@@ -48,27 +48,26 @@ class ChildController extends Controller
 
     public function edit($id)
     {
-        //
+        $children = Child::find($id);
+        return view('child.edit',['child'=> $children]);
     }
-
+ 
     public function update(Request $request, $id)
     {
-        $child = Child::find($id);
-        
-        $child->cFirstname=$request->cFirstname;
-        $child->cMiddlename=$request->cMiddlename;
-        $child->cLastname=$request->cLastname;
-        $child->cBirthday=$request->cBirthday;
-        $child->cMaritalStatus=$request->cMaritalStatus;
-        $child->cLivingStatus=$request->cLivingStatus;
-        $child->cGender=$request->cGender;
-        
-        $child->save();
+        $children = Child::find($id);
+        $children->cFirstname=$request->cFirstname;
+        $children->cMiddlename=$request->cMiddlename;
+        $children->cLastname=$request->cLastname;
+        $children->cBirthday=$request->cBirthday;
+        $children->cMaritalStatus=$request->cMaritalStatus;
+        $children->cLivingStatus=$request->cLivingStatus;
+        $children->cGender=$request->cGender;
+        $children->save();
     }
 
     public function destroy($id)
     {
-        $child = Child::find($id);
-        $child->delete();      
+        $children = Child::find($id);
+        $children->delete();      
     }
 }

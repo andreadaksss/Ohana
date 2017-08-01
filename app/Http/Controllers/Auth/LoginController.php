@@ -75,21 +75,13 @@ class LoginController extends Controller
 
         $user = new User;
         
-       
-
         $user->email= $userSocial->email;
-
-        // $user->family= $userSocial->family;
 
         $user->save();
 
         Auth::login($user);
 
-      
-
         }
-
-        
 
         return redirect()->route('home');
     }

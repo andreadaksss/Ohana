@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mother;
 use Session;
+use Auth;
 use Redirect;
 
 class MotherController extends Controller
@@ -42,13 +43,14 @@ class MotherController extends Controller
 
     public function show($id)
     {
-        $mothers =Mother::all();
+        $mothers=Mother::all();
         return View::make('show')->with('mother', $mothers);
     }
 
     public function edit($id)
     {
-        //
+        $mothers = Mother::find($id);
+        return view('mother.edit',['mother'=> $mothers]);
     }
 
     public function update(Request $request, $id)
@@ -64,6 +66,8 @@ class MotherController extends Controller
         $mothers->mGender=$request->mGender;
         
         $mothers->save();
+
+    
     }
 
     public function destroy($id)

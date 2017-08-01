@@ -3,12 +3,12 @@
 
 @section('content')
 
-      <!-- MAMAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA -->
+      <!-- MOTHER EDIT BLADE -->
       
       <form action ="update/{{$mother->id}}"  method="POST">
 
       <div id="data_mother">
-        <h2>Input Your Mother's Information..</h2>
+        <h2>Edit Your Mother's Information..</h2>
 
         <div class="form-group">
            <input type="hidden" name="_token" value="{{csrf_token()}}"><br>
