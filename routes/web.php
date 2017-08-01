@@ -50,6 +50,10 @@ Route::post('update_user/{id}','UserController@update');
 
 Route::get('/showchild','ChildController@show');
 
+//Facebook Socialite
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('login.facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/edit/{id}','TreeController@edit'); // not yet working
 Route::get('/tree/{id}', 'TreeController@show');
-
