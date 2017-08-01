@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Spouse;
 
 class HomeController extends Controller
 {
@@ -21,8 +23,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+      public function index()
     {
         return view('home');
     }
+    // public function indextwo()
+    // {
+    //     $spouses = user::find(1)->spouse;
+    //     return view('home', compact('spouses'));
+    // }
+    // public function indextwo()
+    // {
+    //     $spouses = Spouses::all();
+    //     return View::make('home')->with('spouses', $spouses);
+    // }
 }

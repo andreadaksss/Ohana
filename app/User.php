@@ -16,7 +16,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
+    public function spouse()
+    {
+        return $this->hasMany(Spouse::class);
+    }
 
     
 }
