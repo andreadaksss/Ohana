@@ -88,6 +88,28 @@
         // n: name, s: sex, m: mother, f: father, ux: wife, vir: husband
 
         var tree = <?php echo $tree;?>;
+        var tree2 = <?php echo $tree2;?>;
+
+        // var userObj = new Object();
+        // var data = [];
+        
+        // tree.forEach(function(user){
+
+        //     userObj = {
+        //         keys: user.uFirstname,
+        //         n: user.uFirstname,
+        //         s: user.uGender,
+        //         m: user.mFirstname,
+        //         f: user.fFirstname,
+        //         vir: user.sFirstname
+        //     };
+
+        //     data.push(userObj);
+
+        //     userObj = null;
+        // });
+
+        // setupDiagram(myDiagram, data, 0);
 
         for (var i in tree)
         {
@@ -96,9 +118,11 @@
             setupDiagram(myDiagram,
             [
                 // { key: user.id, n: user.uFirstname, s: user.uGender, m: user.mFirstname, f: user.fFirstname }
-                { key: 0, n: user.uFirstname, s: user.uGender, m: 3, f: 4 },
-                { key: 3, n: user.mFirstname, s: user.mGender, vir: 4  },
+                { key: 0, n: user.uFirstname, s: user.uGender, m: 3, f: 4, vir: 1},
+                { key: 1, n: user.sFirstname, s: user.sGender },
+                { key: 3, n: user.mFirstname, s: user.mGender, vir: 4 },
                 { key: 4, n: user.fFirstname, s: user.fGender  },
+                { key: 5, n: user.cFirstname, s: user.cGender, m: 0, f: 1 },
             ], 0);
         }
     }

@@ -10,6 +10,7 @@ class TreesTableSeeder extends Seeder
         [
         	['tUid' => '1'],
         	['tUid' => '2'],
+        	['tUid' => '3'],
         ];
 
         DB::table('trees')->insert($trees);

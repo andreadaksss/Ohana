@@ -30,6 +30,17 @@ class UsersTableSeeder extends Seeder
                 'uLivingStatus'     => 'Living',
                 'uMaritalStatus'    => 'Married',
             ],
+            [
+                'email'             => 'rene@gmail.com',
+                'password'          => bcrypt('rene'),
+                'uFirstname'        => 'Rene',
+                'uMiddlename'       => 'Cloribel',
+                'uLastname'         => 'Lao Cubelo',
+                'uBirthday'         => '1970-02-21',
+                'uGender'           => 'Male',
+                'uLivingStatus'     => 'Living',
+                'uMaritalStatus'    => 'Married',
+            ],
         ];
 
         DB::table('users')->insert($users);

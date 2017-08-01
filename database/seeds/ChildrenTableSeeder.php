@@ -18,6 +18,16 @@ class ChildrenTableSeeder extends Seeder
                 'cMaritalStatus'    => 'Single',
                 'cUid'              => '2',
             ],
+            [
+                'cFirstname'        => 'Nami',
+                'cMiddlename'       => 'Bermudo',
+                'cLastname'         => 'Lao Cubelo',
+                'cBirthday'         => '1997-07-13',
+                'cGender'           => 'Female',
+                'cLivingStatus'     => 'Living',
+                'cMaritalStatus'    => 'Single',
+                'cUid'              => '2',
+            ],
         ];
 
         DB::table('children')->insert($children);
