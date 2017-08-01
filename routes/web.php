@@ -56,7 +56,7 @@ Route::post('medit/update/{id}','MotherController@update');
 Route::post('sedit/update/{id}','SpouseController@update');
 Route::post('cedit/update/{id}','ChildController@update');
 
-Route::get('/view/','TreeController@show');
+Route::get('/view/','TreeController@showEloquent');
 
 
 
