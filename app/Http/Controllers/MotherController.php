@@ -41,17 +41,16 @@ class MotherController extends Controller
     
     public function show($id)
     {
-        $mothers =Mother::all();
+        $mothers=Mother::all();
         return View::make('show')->with('mother', $mothers);
     }
 
     public function edit($id)
     {
         $mothers = Mother::find($id);
-        return view('profile.edit_family',['mother'=> $mothers]);
+        return view('mother.edit',['mother'=> $mothers]);
     }
 
- 
     public function update(Request $request, $id)
     {
         $mothers = Mother::find($id);
@@ -63,6 +62,8 @@ class MotherController extends Controller
         $mothers->mLivingStatus=$request->mLivingStatus;
         $mothers->mGender=$request->mGender;
         $mothers->save();
+
+    
     }
 
     public function destroy($id)

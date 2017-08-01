@@ -48,7 +48,8 @@ class FatherController extends Controller
 
     public function edit($id)
     {
-        //
+        $fathers = Father::find($id);
+        return view('father.edit',['father'=> $fathers]);
     }
 
  

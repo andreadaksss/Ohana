@@ -35,8 +35,7 @@ class TreeController extends Controller
 
     }
 
-    
-    public function show($id)
+    public function show()
     {
         $trees =Tree::all();
         $mothers = Mother::all();
@@ -44,7 +43,7 @@ class TreeController extends Controller
         $spouses = Spouse::all();
         $children = Child::all();
         $spouses = Spouse::all();
-        return View::make('profile.index', compact('mothers', 'fathers', 'spouses', 'children'));
+        return View::make('user.show', compact('mothers', 'fathers', 'spouses', 'children'));
     }
 
     public function edit($id)
@@ -52,7 +51,6 @@ class TreeController extends Controller
         //
     }
 
- 
     public function update(Request $request, $id)
     {
         // 

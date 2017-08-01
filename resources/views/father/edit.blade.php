@@ -5,46 +5,46 @@
 
       <!-- MOTHER EDIT BLADE -->
       
-      <form action ="update/{{$mother->id}}"  method="POST">
+      <form action ="update/{{$father->id}}"  method="POST">
 
       <div id="data_mother">
-        <h2>Edit Your Mother's Information..</h2>
+        <h2>Edit Your Father's Information..</h2>
 
         <div class="form-group">
            <input type="hidden" name="_token" value="{{csrf_token()}}"><br>
-          <input type="text" class="form-control" name="mFirstname" id="mFirstname" placeholder="First Name" value="{{$mother->mFirstname}}">
+          <input type="text" class="form-control" name="fFirstname" id="fFirstname" placeholder="First Name" value="{{$father->fFirstname}}">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="mMiddlename" id="mMiddlename" placeholder="Middle Name" value="{{$mother->mMiddlename}}">
+          <input type="text" class="form-control" name="fMiddlename" id="fMiddlename" placeholder="Middle Name" value="{{$father->fMiddlename}}">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="mLastname" id="mLastname" placeholder="Last Name" value="{{$mother->mLastname}}">
+          <input type="text" class="form-control" name="fLastname" id="fLastname" placeholder="Last Name" value="{{$father->fLastname}}">
         </div>
 
         <div class="form-group">
-          <input type="date" class="form-control" name="mBirthday" id="mBirthday" placeholder="Birth Date" value="{{$mother->mBirthday}}">
+          <input type="date" class="form-control" name="fBirthday" id="fBirthday" placeholder="Birth Date" value="{{$father->fBirthday}}">
         </div>
 
         <div class="radio-inline">
          <h4>Marital Status:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Single">Single
+          <input type="radio" name="fMaritalStatus" id="fMaritalStatus" value="Single">Single
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Married">Married
+          <input type="radio" name="fMaritalStatus" id="fMaritalStatus" value="Married">Married
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Divorced">Divorced
+          <input type="radio" name="fMaritalStatus" id="fMaritalStatus" value="Divorced">Divorced
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mMaritalStatus" id="mMaritalStatus" value="Widowed">Widowed
+          <input type="radio" name="fMaritalStatus" id="fMaritalStatus" value="Widowed">Widowed
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
 
          <div class="radio-inline">
          	 <h4>Living Status:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mLivingStatus" id="mLivingStatus" value="Deceased">Deceased
+          <input type="radio" name="fLivingStatus" id="fLivingStatus" value="Deceased">Deceased
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mLivingStatus" id="mLivingStatus" value="Living">Living
+          <input type="radio" name="fLivingStatus" id="fLivingStatus" value="Living">Living
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
@@ -52,9 +52,9 @@
         
          <div class="radio-inline">
          	<h4>Gender:</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mGender" id="mGender" value="Female" checked>Female
+          <input type="radio" name="fGender" id="fGender" value="Female" disabled>Female
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="mGender" id="mGender" value="Male" disabled>Male
+          <input type="radio" name="fGender" id="fGender" value="Male" checked>Male
         </div>
 
 <br><br>

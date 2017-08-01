@@ -24,20 +24,12 @@ Route::get('/mobile', function () {
     return view('about_us/mobile');
 });
 Route::get('/show', function () {
-    return view('tree/show');
+    return view('user/show');
 });
-Route::get('/view', function () {
-    return view('profile/index');
-});
-// Route::get('/view', function () {
-//     return view('profile/index');
-// });
-// Route::get('/profile', function () {
-//     return view('profile/index');
-// });
-// Route::get('/tree', function () {
-//     return view('profile/tree_shot');
-// });
+
+
+
+
 
 Auth::routes();
 
@@ -52,15 +44,21 @@ Route::post('action_child','ChildController@store');
 
 // Route::post('update_user/{id}','UserController@update');
 
-Route::get('edit/{id}','UserController@edit');
-Route::post('user/update/{id}','UserController@update');
+Route::get('/uedit/{id}','UserController@edit');
+Route::get('/medit/{id}','MotherController@edit');
+Route::get('/fedit/{id}','FatherController@edit');
+Route::get('/sedit/{id}','SpouseController@edit');
+Route::get('/cedit/{id}','ChildController@edit');
 
-Route::get('/view','TreeController@show');
+Route::post('uedit/update/{id}','UserController@update');
+Route::post('fedit/update/{id}','FatherController@update');
+Route::post('medit/update/{id}','MotherController@update');
+Route::post('sedit/update/{id}','SpouseController@update');
+Route::post('cedit/update/{id}','ChildController@update');
 
-Route::get('/tree','TreeController@show_tree');
-Route::get('/tree2','TreeController@show_tree2');
+Route::get('/view/','TreeController@show');
 
-Route::get('/showchild','ChildController@show');
+
 
 //Facebook Socialite
 

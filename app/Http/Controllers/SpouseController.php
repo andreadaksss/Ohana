@@ -48,7 +48,7 @@ class SpouseController extends Controller
     public function edit($id)
     {
         $spouses = Spouse::find($id);
-        return view('',['spouse'=> $spouses]);
+        return view('spouse.edit',['spouse'=> $spouses]);
     }
 
  
