@@ -39,20 +39,14 @@ Route::get('/show', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::post('action_mother','MotherController@store');
 Route::post('action_father','FatherController@store');
 Route::post('action_spouse','SpouseController@store');
 Route::post('action_child','ChildController@store');
 
 Route::post('action_user/{id}','UserController@update');
-
 Route::post('update_user/{id}','UserController@update');
-Route::get('edit/{id}','TreeController@edit');
-
-Route::get('/view','TreeController@show');
-
-Route::get('/tree','TreeController@show_tree');
-Route::get('/tree2','TreeController@show_tree2');
 
 Route::get('/showchild','ChildController@show');
 
@@ -60,3 +54,6 @@ Route::get('/showchild','ChildController@show');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('login.facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/edit/{id}','TreeController@edit'); // not yet working
+Route::get('/tree/{id}', 'TreeController@show');

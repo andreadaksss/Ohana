@@ -11,7 +11,6 @@ use View;
 
 class ChildController extends Controller
 {
-   
     public function index()
     {
         //
@@ -52,10 +51,10 @@ class ChildController extends Controller
         //
     }
 
- 
     public function update(Request $request, $id)
     {
         $child = Child::find($id);
+        
         $child->cFirstname=$request->cFirstname;
         $child->cMiddlename=$request->cMiddlename;
         $child->cLastname=$request->cLastname;
@@ -63,6 +62,7 @@ class ChildController extends Controller
         $child->cMaritalStatus=$request->cMaritalStatus;
         $child->cLivingStatus=$request->cLivingStatus;
         $child->cGender=$request->cGender;
+        
         $child->save();
     }
 
