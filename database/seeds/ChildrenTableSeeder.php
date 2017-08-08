@@ -28,6 +28,26 @@ class ChildrenTableSeeder extends Seeder
                 'cMaritalStatus'    => 'Single',
                 'cUid'              => '2',
             ],
+            [
+                'cFirstname'        => 'Christine',
+                'cMiddlename'       => 'Gabuya',
+                'cLastname'         => 'Baclayon',
+                'cBirthday'         => '1995-01-23',
+                'cGender'           => 'Female',
+                'cLivingStatus'     => 'Living',
+                'cMaritalStatus'    => 'Single',
+                'cUid'              => '4',
+            ],
+            [
+                'cFirstname'        => 'Martha',
+                'cMiddlename'       => '',
+                'cLastname'         => 'Conridge',
+                'cBirthday'         => '2008-04-17',
+                'cGender'           => 'Female',
+                'cLivingStatus'     => 'Living',
+                'cMaritalStatus'    => 'Single',
+                'cUid'              => '6',
+            ],
         ];
 
         DB::table('children')->insert($children);

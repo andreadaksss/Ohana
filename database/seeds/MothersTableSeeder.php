@@ -38,6 +38,36 @@ class MothersTableSeeder extends Seeder
                 'mMaritalStatus'    => 'Married',
                 'mUid'              => '3',
             ],
+            [
+                'mFirstname'        => 'Rose',
+                'mMiddlename'       => 'Flores',
+                'mLastname'         => 'Baclayon',
+                'mBirthday'         => '1965-12-12',
+                'mGender'           => 'Female',
+                'mLivingStatus'     => 'Living',
+                'mMaritalStatus'    => 'Single',
+                'mUid'              => '4',
+            ],
+            [
+                'mFirstname'        => 'Hanabi',
+                'mMiddlename'       => '',
+                'mLastname'         => 'Shoyo',
+                'mBirthday'         => '1970-03-29',
+                'mGender'           => 'Female',
+                'mLivingStatus'     => 'Living',
+                'mMaritalStatus'    => 'Single',
+                'mUid'              => '5',
+            ],
+            [
+                'mFirstname'        => 'Rohann',
+                'mMiddlename'       => '',
+                'mLastname'         => 'Conridge',
+                'mBirthday'         => '1968-07-15',
+                'mGender'           => 'Female',
+                'mLivingStatus'     => 'Living',
+                'mMaritalStatus'    => 'Single',
+                'mUid'              => '6',
+            ],
         ];
 
         DB::table('mothers')->insert($mothers);

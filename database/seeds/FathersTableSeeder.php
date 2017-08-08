@@ -38,6 +38,16 @@ class FathersTableSeeder extends Seeder
                 'fMaritalStatus'    => 'Married',
                 'fUid'              => '3',
             ],
+            [
+                'fFirstname'        => 'Jaydel',
+                'fMiddlename'       => 'Ridge',
+                'fLastname'         => 'Villacin',
+                'fBirthday'         => '1965-09-16',
+                'fGender'           => 'Male',
+                'fLivingStatus'     => 'Deceased',
+                'fMaritalStatus'    => 'Married',
+                'fUid'              => '7',
+            ],
         ];
 
         DB::table('fathers')->insert($fathers);
