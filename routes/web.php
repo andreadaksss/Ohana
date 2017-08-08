@@ -51,5 +51,6 @@ Route::post('update_user/{id}','UserController@update');
 Route::get('/showchild','ChildController@show');
 
 Route::get('/edit/{id}','TreeController@edit'); // not yet working
-Route::get('/tree/{id}', 'TreeController@show');
+Route::get('/showTree/{id}', 'TreeController@showTree');
+Route::get('/query/{id}', 'TreeController@query');
 
