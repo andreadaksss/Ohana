@@ -150,7 +150,7 @@
                 }
             }
             // mother
-            else if(user.mFirstname !== null && user.fFirstname === null)
+            if(user.mFirstname !== null && user.fFirstname === null)
             {
                 // mother, spouse
                 if(user.sFirstname !== null)
@@ -202,7 +202,7 @@
                 }
             }
             // father
-            else if(user.mFirstname === null && user.fFirstname !== null)
+            if(user.mFirstname === null && user.fFirstname !== null)
             {
                 // father, spouse
                 if(user.sFirstname !== null)
@@ -457,6 +457,17 @@
                 var cdata = { from: mlabkey, to: key };
                 myDiagram.model.addLinkData(cdata);
             }
+            if (mother !== undefined && father === undefined)
+            {
+                var cdata = { from: mother, to: key };
+                myDiagram.model.addLinkData(cdata);
+            }
+            if (mother === undefined && father !== undefined)
+            {
+                var cdata = { from: father, to: key };
+                myDiagram.model.addLinkData(cdata);
+            }
+            
         }
     }
 

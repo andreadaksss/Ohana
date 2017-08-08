@@ -56,10 +56,7 @@ Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('l
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/edit/{id}','TreeController@edit'); // not yet working
-<<<<<<< HEAD
 Route::get('/showTree/{id}', 'TreeController@showTree');
 Route::get('/query/{id}', 'TreeController@query');
 
-=======
 Route::get('/tree/{id}', 'TreeController@show');
->>>>>>> 5895c2b4919b709e19ee2f78dcbcefeab205ffda
