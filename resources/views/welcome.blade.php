@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" href="images/3.png" type="image/gif" sizes="16x16">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <title>Ohana</title>
 
         <!-- Fonts -->
@@ -94,8 +96,6 @@
                 <strong>
                    <p>Mobile - Web Genealogy Application</p></strong>
                 <i><p>We connect family and bring them together</p></i>
-                
-               
             </div>
         </div>
     </body>

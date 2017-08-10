@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Spouse;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,7 +19,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function spouse()
+    public function spouses()
     {
         return $this->hasMany(Spouse::class);
     }

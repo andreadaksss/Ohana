@@ -8,7 +8,21 @@
                 </div>
                  <div class="panel-body" align="center">
 
+<!-- 
+use App\User;
 
+$data = User::where('uFirstname', '=', $uFirstname)
+            ->where('uMiddlename', '=', $uMiddlename)
+            ->where('uLastname', '=', $uLastname)
+            ->where('uBirthday', '=', $uBirthday)
+            ->where('uGender', '=', $uGender)
+            ->where('uLivingStatus', '=', $uLivingStatus)
+            ->where('uMaritalStatus', '=', $uMaritalStatus)->get();
+
+            if ($data == null) {
+    
+}
+   -->
 
                 <button type="button" class="btn btn-primary btn-block" align="center" style="position= right;"><a href="uedit/{{ Auth::user()->id }}">Edit Profile</a></button>
                 <!-- <button type="button" class="btn btn-primary btn-block" align="center" data-toggle="collapse" data-target="#collapse_user" style="position= right;"><a href="uedit/{{Auth::user()->id}}">Edit Profile</a></button> -->
