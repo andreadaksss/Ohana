@@ -1,5 +1,11 @@
 <?php
 
+use App\Spouse;
+use App\Mother;
+use App\Father;
+use App\Child;
+use App\User;
+
 // Route::get('/', function () {
 //     $children=Child::all();
 //     return View::make('children')->with('children', $children);
@@ -21,7 +27,13 @@ Route::get('/developers', function () {
 Route::get('/mobile', function () {
     return view('about_us/mobile');
 });
-
+Route::get('/family', function () {
+        $mothers = Mother::all();
+        $fathers = Father::all();
+        $spouses = Spouse::all();
+        $children = Child::all();
+        return View::make('tree.family', compact('mothers', 'fathers', 'spouses', 'children'));
+});
 
 
 Auth::routes();
@@ -45,9 +57,11 @@ Route::post('medit/update/{id}','MotherController@update');
 Route::post('sedit/update/{id}','SpouseController@update');
 Route::post('cedit/update/{id}','ChildController@update');
 
-Route::get('/view/','TreeController@show');
+Route::get('/view/','TreeController@showEloquent');
 Route::get('/user/profile','UserController@show');
 Route::get('/home/{id}','HomeController@index');
+
+Route::get('/users/{id}/spouses','TreeController@index');
 
 
 

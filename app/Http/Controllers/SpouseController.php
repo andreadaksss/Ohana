@@ -10,7 +10,7 @@ use Redirect;
 
 class SpouseController extends Controller
 {
-    public function index()
+    public function index($id)
     {
         //
     }

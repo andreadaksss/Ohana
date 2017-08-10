@@ -10,15 +10,17 @@ use App\Mother;
 use App\Father;
 use App\Child;
 use App\Spouse;
+use App\User;
 use Auth;
 use View;
 use Illuminate\Support\Facades\DB;
 
 class TreeController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        //
+        $users = User::find($id);
+        return $users->spouses;
     }
 
     public function create()
@@ -62,6 +64,7 @@ class TreeController extends Controller
                 });
 
         return view('genogram.sample1mine', array('tree' => $tree, 'tree2' => $tree2));
+    }
 
     public function showEloquent()
     {
@@ -70,7 +73,6 @@ class TreeController extends Controller
         $fathers = Father::all();
         $spouses = Spouse::all();
         $children = Child::all();
-        $spouses = Spouse::all();
         return View::make('user.show', compact('mothers', 'fathers', 'spouses', 'children'));
     }
 

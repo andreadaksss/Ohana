@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -32,7 +33,7 @@
                         <span class="icon-bar"></span>
                         
                     </button>
- <img src="images/3.png" width="50px" height="50px">
+  <img src="images/3.png" width="50px" height="50px"> 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                    
@@ -43,17 +44,21 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
-                     <ul class="nav navbar-nav">
-      <li class="home"><a href="/home">Home</a></li>
+                <ul class="nav navbar-nav">
+
+                <!-- Timeline Profile Event Album Family Tree About Us -->
+      <li class="home"><a href="/home"><i class="fa fa-newspaper-o" style="font-size:20px;color:#00cc66;"></i></a></li>
       
-      <li><a href="/user/profile">Profile</a></li>
-       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Family Tree <span class="caret"></span></a>
+       <li><a href="/user/profile"><i class="fa fa-user" style="font-size:20px;color:#00cc66;"></i></a></li>
+      <li><a href=""><i class="fa fa-calendar" style="font-size:20px;color:#00cc66;"></i></a></li>
+      <li><a href=""><i class="fa fa-picture-o" style="font-size:20px;color:#00cc66;"></i></a></li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-pagelines" style="font-size:20px;color:#00cc66;"></i><span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/familytree">Add Family</a></li>
           <li><a href="/view">View Family Tree</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us<span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-info-circle" style="font-size:20px;color:#00cc66;"></i><span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/application">Application</a></li>
           <li><a href="/mobile">Mobile App</a></li>
@@ -68,10 +73,16 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ URL::route('login.facebook') }}"> 
+                                <i class="fa fa-facebook-square" style="font-size:20px;color:#483D8B;"></i>
+                                &nbsp;Login with Facebook</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->email }} <span class="caret"></span>
+                                <i class="fa fa-user-o" style="font-size:20px;color:#00cc66;"></i>
+                                    <!-- {{ Auth::user()->email }} <span class="caret"></span> -->
+                                    {{ Auth::user()->uFirstname }} {{ Auth::user()->uMiddlename }} {{ Auth::user()->uLastname }} <span class="caret"></span>
+                                    
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -79,7 +90,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <i class="fa fa-sign-out" style="font-size:20px;color:#00cc66;"></i> &nbsp;Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
