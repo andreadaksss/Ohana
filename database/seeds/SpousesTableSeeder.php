@@ -88,6 +88,16 @@ class SpousesTableSeeder extends Seeder
                 'sMaritalStatus'    => 'Married',
                 'sUid'              => '13',
             ],
+            [
+                'sFirstname'        => 'John',
+                'sMiddlename'       => 'Rich',
+                'sLastname'         => 'King',
+                'sBirthday'         => '1996-01-19',
+                'sGender'           => 'Male',
+                'sLivingStatus'     => 'Deceased',
+                'sMaritalStatus'    => 'Married',
+                'sUid'              => '13',
+            ],
 
         ];
 

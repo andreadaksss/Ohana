@@ -55,8 +55,15 @@ Route::get('/showchild','ChildController@show');
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('login.facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/edit/{id}','TreeController@edit'); // not yet working
+Route::get('/edit/{id}','TreeController@edit');
+Route::get('/tree/{id}', 'TreeController@show');
+
+// show sample tree
+Route::get('/sample', function ()
+{
+    return view('genogram/sample');
+});
+
 Route::get('/showTree/{id}', 'TreeController@showTree');
 Route::get('/query/{id}', 'TreeController@query');
-
-Route::get('/tree/{id}', 'TreeController@show');
+Route::get('/empty/{id}', 'TreeController@empty1');

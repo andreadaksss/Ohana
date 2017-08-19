@@ -29,17 +29,30 @@ class TreeController extends Controller
 
     public function query($id)
     {
-        $query = DB::table('users')
+        $tree = DB::table('users')
                 ->leftJoin('spouses',   'users.id',     '=', 'spouses.sUid')
+                ->leftJoin('children',  'users.id',     '=', 'children.cUid')
                 ->leftJoin('mothers',   'users.id',     '=', 'mothers.mUid')
                 ->leftJoin('fathers',   'users.id',     '=', 'fathers.fUid')
-                ->select('users.*', 'spouses.*', 'mothers.*', 'fathers.*')
-                // ->where('users.id', $id)
-                // ->where('mothers.mUid', $id)
-                // ->where('fathers.fUid', $id)
+                ->select('users.*', 'spouses.*', 'children.*', 'mothers.*', 'fathers.*')
+                ->where('users.id', $id)
                 ->get();
 
-        return view('genogram/query', array('query' => $query));
+        return view('genogram.query', array('tree' => $tree));
+    }
+
+    public function empty1($id)
+    {
+        $tree = DB::table('users')
+                ->leftJoin('spouses',   'users.id',     '=', 'spouses.sUid')
+                ->leftJoin('children',  'users.id',     '=', 'children.cUid')
+                ->leftJoin('mothers',   'users.id',     '=', 'mothers.mUid')
+                ->leftJoin('fathers',   'users.id',     '=', 'fathers.fUid')
+                ->select('users.*', 'spouses.*', 'children.*', 'mothers.*', 'fathers.*')
+                ->where('users.id', $id)
+                ->get();
+
+        return view('genogram.empty', array('tree' => $tree));
     }
 
     public function index()
